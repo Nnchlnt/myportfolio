@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowl'Up Eatery | Big Taste, Bigger Bowls</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Welcome to Bowl'Up Eatery. Discover our assorted Ghanaian Jollof, Fried Rice, Indomie, and Creamy Spaghetti bowls in Koforidua. Big taste, bigger bowls!">
+    <meta name="keywords" content="Bowl'Up Eatery, Bowlup, Jollof Bowl, Fried Rice Bowl, Indomie Wok, Koforidua Food, Food Delivery Koforidua, Ghana Food">
+    <meta property="og:title" content="Bowl'Up Eatery | Big Taste, Bigger Bowls">
+    <meta property="og:description" content="Order your signature food bowls in Koforidua. Loaded with goodness, made with love. Delivery available!">
+    <meta property="og:image" content="images/bowlup logo.jpeg">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Local CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- Header & Navigation --- -->
+    <header id="site-header">
+        <div class="nav-container">
+            <a href="#" class="logo-wrapper">
+                <img src="images/bowlup logo.jpeg" alt="Bowl'Up Eatery Logo" class="logo-img">
+                <span class="logo-text">Bowl'Up</span>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#" class="nav-link active" data-sec="hero">Home</a></li>
+                <li><a href="#about" class="nav-link" data-sec="about">About</a></li>
+                <li><a href="#builder" class="nav-link" data-sec="builder">Bowl Builder</a></li>
+                <li><a href="#menu" class="nav-link" data-sec="menu">Menu</a></li>
+                <li><a href="#contact" class="nav-link" data-sec="contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="cart-trigger" id="cart-btn" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Cart</span>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+                
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Hero Section with 3D Canvas --- -->
+    <section id="hero">
+        <div class="canvas-container" id="canvas-container">
+            <!-- Three.js Canvas will be appended here -->
+        </div>
+        
+        <div class="hero-content-wrapper">
+            <div class="hero-text">
+                <div class="hero-tag">
+                    <i class="fa-solid fa-fire-flame-curved"></i> Freshly Stir-fried in Koforidua
+                </div>
+                <h1 class="hero-title">
+                    Big Taste, <span class="glow-red">Bigger Bowls.</span>
+                </h1>
+                <p class="hero-desc">
+                    Experience extra goodness and extra happiness with our premium signature bowls. Made with fresh ingredients, loaded with premium toppings, and served in massive portions that always fill you up!
+                </p>
+                <div class="btn-group">
+                    <a href="#menu" class="btn btn-primary"><i class="fa-solid fa-bowl-food"></i> Order Signature Bowls</a>
+                    <a href="#builder" class="btn btn-secondary"><i class="fa-solid fa-wand-magic-sparkles"></i> Customize Your Bowl</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll to Explore</span>
+            <div class="mouse-scroll"></div>
+        </div>
+    </section>
+
+    <!-- --- Features Section --- -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">The Bowl'Up Guarantee</h2>
+                <p class="section-desc">We don't do average. Every single bowl is crafted to deliver maximum satisfaction, premium flavor, and exceptional value.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3>Big Portions</h3>
+                    <p>Always filling! We package our meals in spacious signature bowls packed to the brim. You'll never go hungry on our watch.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3>Fresh Ingredients</h3>
+                    <p>Great quality only. We source crisp vegetables, quality grains, aromatic spices, and choice meats daily for that superior wok-fried taste.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Right to you! Hot, steaming, and fresh. Our dedicated Koforidua delivery network ensures your bowl arrives at your doorstep in record time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Interactive Bowl Builder Section --- -->
+    <section class="section" id="builder" style="background: radial-gradient(circle at 90% 80%, rgba(255, 183, 3, 0.04) 0%, rgba(10, 11, 13, 1) 60%);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Interactive Wok</span>
+                <h2 class="section-title">Build Your Bowl</h2>
+                <p class="section-desc">Unleash your inner chef! Select your base, throw in your favorite premium add-ons, and watch your custom bowl come to life.</p>
+            </div>
+            
+            <div class="builder-split">
+                <!-- Visual empty bowl with interactive animation overlay -->
+                <div class="builder-visual">
+                    <div class="interactive-bowl-container">
+                        <div class="builder-steam" id="builder-steam">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="static-bowl" id="interactive-bowl">
+                            <div class="bowl-base-fill jollof-base" id="base-jollof"></div>
+                            <div class="bowl-base-fill friedrice-base" id="base-friedrice"></div>
+                            <div class="bowl-base-fill indomie-base" id="base-indomie"></div>
+                            <div class="bowl-base-fill spaghetti-base" id="base-spaghetti"></div>
+                            <div class="bowl-topping-layer" id="topping-layer"></div>
+                            <div style="color: rgba(255,255,255,0.15); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; z-index: 1;" id="bowl-placeholder-text">
+                                <i class="fa-solid fa-utensils"></i> Select a Base
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controls and configuration -->
+                <div class="builder-controls">
+                    <div class="builder-steps">
+                        <!-- Step 1: Select Base -->
+                        <div class="builder-section">
+                            <h3>Step 1: Choose Your Base <span>(Required)</span></h3>
+                            <div class="base-selector">
+                                <button class="base-btn" data-base="jollof" data-price="35">
+                                    <span class="base-title">Assorted Jollof</span>
+                                    <span class="base-price">GHC 35</span>
+                                </button>
+                                <button class="base-btn" data-base="friedrice" data-price="35">
+                                    <span class="base-title">Assorted Fried Rice</span>
+                                    <span class="base-price">GHC 35</span>
+                                </button>
+                                <button class="base-btn" data-base="indomie" data-price="30">
+                                    <span class="base-title">Stir-Fry Indomie</span>
+                                    <span class="base-price">GHC 30</span>
+                                </button>
+                                <button class="base-btn" data-base="spaghetti" data-price="30">
+                                    <span class="base-title">Creamy Spaghetti</span>
+                                    <span class="base-price">GHC 30</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Add-Ons -->
+                        <div class="builder-section">
+                            <h3>Step 2: Toss in Add-Ons <span>(Optional)</span></h3>
+                            <div class="topping-selector">
+                                <button class="topping-chip" data-topping="chicken" data-price="15" data-emoji="🍗">
+                                    🍗 Chicken <span>+GHC 15</span>
+                                </button>
+                                <button class="topping-chip" data-topping="sausage" data-price="7" data-emoji="🌭">
+                                    🌭 Sausage <span>+GHC 7</span>
+                                </button>
+                                <button class="topping-chip" data-topping="gizzard" data-price="12" data-emoji="🥩">
+                                    🥩 Gizzard <span>+GHC 12</span>
+                                </button>
+                                <button class="topping-chip" data-topping="egg" data-price="5" data-emoji="🥚">
+                                    🥚 Egg <span>+GHC 5</span>
+                                </button>
+                                <button class="topping-chip" data-topping="plantain" data-price="10" data-emoji="🍌">
+                                    🍌 Plantain <span>+GHC 10</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Summary -->
+                        <div class="builder-summary">
+                            <div class="total-price-display">
+                                <span class="price-label">Custom Bowl Total</span>
+                                <span class="price-val" id="builder-price-display">GHC 0.00</span>
+                            </div>
+                            <button class="btn btn-primary" id="add-builder-to-cart" disabled>
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Signature Menu Section --- -->
+    <section class="section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Menu</span>
+                <h2 class="section-title">Signature Bowls & Combos</h2>
+                <p class="section-desc">Choose from our classic culinary masterpieces, packed with premium proteins and authentic local spices.</p>
+            </div>
+            
+            <!-- Category Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="bowls">Signature Bowls</button>
+                <button class="filter-btn" data-filter="combos">Value Combos</button>
+                <button class="filter-btn" data-filter="addons">Add-Ons</button>
+            </div>
+            
+            <!-- Menu Cards Grid -->
+            <div class="menu-grid" id="menu-grid">
+                
+                <!-- 1. Assorted Jollof Bowl -->
+                <div class="menu-card" data-category="bowls">
+                    <div class="menu-img-wrapper">
+                        <img src="images/WhatsApp Image 2026-05-27 at 00.20.04 (1).jpeg" alt="Assorted Jollof Bowl" class="menu-img">
+                        <span class="card-badge">Popular</span>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-title-row">
+                            <h3 class="menu-item-name">Assorted Jollof Bowl</h3>
+                            <span class="menu-price" id="price-jollof">GHC 35</span>
+                        </div>
+                        <p class="menu-item-desc">A spicy, rich Ghanaian Jollof rice base, wok-tossed with fresh sweet green bell peppers, chopped carrots, sliced sausages, and tender beef chunks.</p>
+                        
+                        <div class="size-toggle-container">
+                            <button class="size-btn active" data-item="jollof" data-size="regular" data-price="35">Regular</button>
+                            <button class="size-btn" data-item="jollof" data-size="loaded" data-price="50">Loaded (Extra Meat & Egg)</button>
+                        </div>
+                        
+                        <div class="menu-action">
+                            <button class="add-to-cart-btn" data-name="Assorted Jollof Bowl" data-base-price="35" data-img="images/WhatsApp Image 2026-05-27 at 00.20.04 (1).jpeg" data-id="jollof">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Assorted Fried Rice Bowl -->
+                <div class="menu-card" data-category="bowls">
+                    <div class="menu-img-wrapper">
+                        <img src="images/WhatsApp Image 2026-05-27 at 00.21.24 (2).jpeg" alt="Assorted Fried Rice Bowl" class="menu-img">
+                        <span class="card-badge">Chef Choice</span>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-title-row">
+                            <h3 class="menu-item-name">Assorted Fried Rice Bowl</h3>
+                            <span class="menu-price" id="price-friedrice">GHC 35</span>
+                        </div>
+                        <p class="menu-item-desc">Golden, savory Ghanaian fried rice loaded with sweet corn, garden green peas, shredded eggs, tender beef chunks, sausages, and tossed in aromatic oils.</p>
+                        
+                        <div class="size-toggle-container">
+                            <button class="size-btn active" data-item="friedrice" data-size="regular" data-price="35">Regular</button>
+                            <button class="size-btn" data-item="friedrice" data-size="loaded" data-price="50">Loaded (Extra Meat & Egg)</button>
+                        </div>
+                        
+                        <div class="menu-action">
+                            <button class="add-to-cart-btn" data-name="Assorted Fried Rice Bowl" data-base-price="35" data-img="images/WhatsApp Image 2026-05-27 at 00.21.24 (2).jpeg" data-id="friedrice">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Stir-Fry Indomie Bowl -->
+                <div class="menu-card" data-category="bowls">
+                    <div class="menu-img-wrapper">
+                        <img src="images/WhatsApp Image 2026-05-27 at 00.20.04.jpeg" alt="Stir-Fry Indomie Bowl" class="menu-img">
+                        <span class="card-badge">Wok Tossed</span>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-title-row">
+                            <h3 class="menu-item-name">Stir-Fry Indomie Bowl</h3>
+                            <span class="menu-price" id="price-indomie">GHC 30</span>
+                        </div>
+                        <p class="menu-item-desc">Hot stir-fried instant noodles infused with sweet soy sauce, tossed with scrambled eggs, carrot strips, fresh green onions, sausages, and seasoned beef chunks.</p>
+                        
+                        <div class="size-toggle-container">
+                            <button class="size-btn active" data-item="indomie" data-size="regular" data-price="30">Regular</button>
+                            <button class="size-btn" data-item="indomie" data-size="loaded" data-price="45">Loaded (Extra Meat & Egg)</button>
+                        </div>
+                        
+                        <div class="menu-action">
+                            <button class="add-to-cart-btn" data-name="Stir-Fry Indomie Bowl" data-base-price="30" data-img="images/WhatsApp Image 2026-05-27 at 00.20.04.jpeg" data-id="indomie">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Creamy Spaghetti Bowl -->
+                <div class="menu-card" data-category="bowls">
+                    <div class="menu-img-wrapper">
+                        <img src="images/WhatsApp Image 2026-05-27 at 00.21.24 (1).jpeg" alt="Creamy Spaghetti Bowl" class="menu-img">
+                        <span class="card-badge">Creamy</span>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-title-row">
+                            <h3 class="menu-item-name">Creamy Spaghetti Bowl</h3>
+                            <span class="menu-price" id="price-spaghetti">GHC 30</span>
+                        </div>
+                        <p class="menu-item-desc">Al dente spaghetti cooked in a rich, buttery, herb-infused creamy sauce, packed with caramelized onions, bell peppers, sausages, and juicy sliced beef.</p>
+                        
+                        <div class="size-toggle-container">
+                            <button class="size-btn active" data-item="spaghetti" data-size="regular" data-price="30">Regular</button>
+                            <button class="size-btn" data-item="spaghetti" data-size="loaded" data-price="45">Loaded (Extra Meat & Egg)</button>
+                        </div>
+                        
+                        <div class="menu-action">
+                            <button class="add-to-cart-btn" data-name="Creamy Spaghetti Bowl" data-base-price="30" data-img="images/WhatsApp Image 2026-05-27 at 00.21.24 (1).jpeg" data-id="spaghetti">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Loaded Fried Rice Combo -->
+                <div class="menu-card" data-category="combos">
+                    <div class="menu-img-wrapper">
+                        <img src="images/WhatsApp Image 2026-05-27 at 00.21.23 (1).jpeg" alt="Loaded Fried Rice Combo" class="menu-img">
+                        <span class="card-badge combo">Best Value</span>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-title-row">
+                            <h3 class="menu-item-name">Fried Rice Combo</h3>
+                            <span class="menu-price">GHC 60</span>
+                        </div>
+                        <p class="menu-item-desc">Get the ultimate feast! Includes a large Regular Fried Rice Bowl, accompanied by two crispy fried chicken drumsticks, sweet fried plantains, dynamic side salad (baked beans, corned beef), shito sauce, and a chilled drink.</p>
+                        
+                        <div class="menu-action">
+                            <button class="add-to-cart-btn" data-name="Fried Rice Combo Plate" data-base-price="60" data-img="images/WhatsApp Image 2026-05-27 at 00.21.23 (1).jpeg" data-id="combo-friedrice" style="margin-top: 50px;">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Loaded Jollof Combo -->
+                <div class="menu-card" data-category="combos">
+                    <div class="menu-img-wrapper">
+                        <img src="images/WhatsApp Image 2026-05-27 at 00.21.23.jpeg" alt="Loaded Jollof Combo" class="menu-img">
+                        <span class="card-badge combo">Highly Rated</span>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-title-row">
+                            <h3 class="menu-item-name">Jollof Combo Plate</h3>
+                            <span class="menu-price">GHC 60</span>
+                        </div>
+                        <p class="menu-item-desc">A giant plate loaded with our signature savory Jollof rice, served with two golden-fried chicken drumsticks, sliced hard-boiled eggs, sweet kelewele plantains, a fresh mixed salad with ketchup & dressing, and a cold soft drink.</p>
+                        
+                        <div class="menu-action">
+                            <button class="add-to-cart-btn" data-name="Jollof Combo Plate" data-base-price="60" data-img="images/WhatsApp Image 2026-05-27 at 00.21.23.jpeg" data-id="combo-jollof" style="margin-top: 50px;">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Super Loaded Jollof Bowl with Plantain & Beef -->
+                <div class="menu-card" data-category="combos">
+                    <div class="menu-img-wrapper">
+                        <img src="images/WhatsApp Image 2026-05-27 at 00.21.24 (3).jpeg" alt="Super Loaded Jollof Bowl" class="menu-img">
+                        <span class="card-badge combo">Meat Lover</span>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-title-row">
+                            <h3 class="menu-item-name">Super Loaded Jollof</h3>
+                            <span class="menu-price">GHC 50</span>
+                        </div>
+                        <p class="menu-item-desc">A heavy portion of authentic Ghanaian Jollof rice topped with a double serving of spicy golden-fried sweet plantains (kelewele), thick chunks of tender wok-fried beef, and rich side dipping sauces.</p>
+                        
+                        <div class="menu-action">
+                            <button class="add-to-cart-btn" data-name="Super Loaded Jollof Bowl" data-base-price="50" data-img="images/WhatsApp Image 2026-05-27 at 00.21.24 (3).jpeg" data-id="super-jollof" style="margin-top: 50px;">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Standard Add-Ons Selection -->
+                <div class="menu-card" data-category="addons">
+                    <div class="menu-img-wrapper">
+                        <img src="images/WhatsApp Image 2026-05-27 at 00.20.05.jpeg" alt="Add-ons Card" class="menu-img">
+                        <span class="card-badge">Sides</span>
+                    </div>
+                    <div class="menu-info">
+                        <h3 class="menu-item-name" style="margin-bottom:12px;">Extra Add-Ons</h3>
+                        <p class="menu-item-desc" style="margin-bottom:16px;">Boost your meal with our freshly prepared sides. Click to add individual toppings directly to your cart!</p>
+                        
+                        <div class="addon-grid-list" style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
+                            <div class="addon-row" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-glass); padding-bottom:6px;">
+                                <span>🍗 Crispy Chicken</span>
+                                <button class="btn btn-secondary" style="padding:6px 12px; font-size:0.75rem;" onclick="addSingleAddon('Crispy Chicken', 15)">+ GHC 15</button>
+                            </div>
+                            <div class="addon-row" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-glass); padding-bottom:6px;">
+                                <span>🌭 Smoked Sausage</span>
+                                <button class="btn btn-secondary" style="padding:6px 12px; font-size:0.75rem;" onclick="addSingleAddon('Smoked Sausage', 7)">+ GHC 7</button>
+                            </div>
+                            <div class="addon-row" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-glass); padding-bottom:6px;">
+                                <span>🥩 Spicy Gizzard</span>
+                                <button class="btn btn-secondary" style="padding:6px 12px; font-size:0.75rem;" onclick="addSingleAddon('Spicy Gizzard', 12)">+ GHC 12</button>
+                            </div>
+                            <div class="addon-row" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-glass); padding-bottom:6px;">
+                                <span>🍌 Sweet Fried Plantain</span>
+                                <button class="btn btn-secondary" style="padding:6px 12px; font-size:0.75rem;" onclick="addSingleAddon('Fried Plantain', 10)">+ GHC 10</button>
+                            </div>
+                            <div class="addon-row" style="display:flex; justify-content:space-between; align-items:center; padding-bottom:6px;">
+                                <span>🥚 Hard Boiled Egg</span>
+                                <button class="btn btn-secondary" style="padding:6px 12px; font-size:0.75rem;" onclick="addSingleAddon('Boiled Egg', 5)">+ GHC 5</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Combos Banner Promo --- -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="banner-card">
+                <div class="banner-content">
+                    <span class="banner-tag">Exclusive Value Offer</span>
+                    <h2 class="banner-title">Double Up The Goodness</h2>
+                    <p class="banner-desc">
+                        Our **Bowl'Up Combo** (GHC 60) gives you maximum satisfaction. Get **any regular bowl** of your choice (Jollof, Fried Rice, Indomie, or Spaghetti) + **Crispy Chicken** + **Sweet Fried Plantain** + **A Chilled Refreshing Drink**. Save money, eat larger!
+                    </p>
+                    <a href="#menu" class="btn btn-primary"><i class="fa-solid fa-fire"></i> Claim Combo Value</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Contact & Order Info Section --- -->
+    <section class="section" id="contact" style="background: #08090c;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title">Location & Delivery</h2>
+                <p class="section-desc">Craving a hot wok-fried bowl? We are ready to fire up the burners and deliver directly to your Koforidua address.</p>
+            </div>
+            
+            <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:50px; align-items:center;">
+                <!-- Contact info cards -->
+                <div style="display:flex; flex-direction:column; gap:24px;">
+                    <div style="background:var(--bg-card); border:1px solid var(--border-glass); border-radius:16px; padding:30px; display:flex; gap:20px; align-items:flex-start;">
+                        <div style="height:55px; width:55px; border-radius:50%; background:rgba(217, 4, 41, 0.08); display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:1.4rem;">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size:1.15rem; text-transform:uppercase; margin-bottom:8px;">Our Location</h3>
+                            <p style="color:var(--text-muted); font-size:0.95rem;">Koforidua, Ghana (Delivery available city-wide)</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background:var(--bg-card); border:1px solid var(--border-glass); border-radius:16px; padding:30px; display:flex; gap:20px; align-items:flex-start;">
+                        <div style="height:55px; width:55px; border-radius:50%; background:rgba(255, 183, 3, 0.08); display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:1.4rem;">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size:1.15rem; text-transform:uppercase; margin-bottom:8px;">Order Hotline</h3>
+                            <p style="color:var(--text-muted); font-size:0.95rem;">WhatsApp: <strong>020 132 1499</strong></p>
+                            <p style="color:var(--text-muted); font-size:0.85rem; margin-top:4px;">Direct chat available for queries or delivery requests.</p>
+                        </div>
+                    </div>
+
+                    <div style="background:var(--bg-card); border:1px solid var(--border-glass); border-radius:16px; padding:30px; display:flex; gap:20px; align-items:flex-start;">
+                        <div style="height:55px; width:55px; border-radius:50%; background:rgba(255, 255, 255, 0.04); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.4rem;">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size:1.15rem; text-transform:uppercase; margin-bottom:8px;">Service Hours</h3>
+                            <p style="color:var(--text-muted); font-size:0.95rem;">Monday - Sunday: 11:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom visual container with brand logo -->
+                <div style="display:flex; justify-content:center; align-items:center;">
+                    <div style="position:relative; width:100%; max-width:400px; aspect-ratio:1; border-radius:30px; overflow:hidden; border:1px solid var(--border-glass); box-shadow:var(--shadow-premium);">
+                        <img src="images/bowlup logo.jpeg" alt="Bowl'Up Wok cooking" style="width:100%; height:100%; object-fit:cover; filter:brightness(0.7);">
+                        <div style="position:absolute; bottom:0; left:0; width:100%; background:linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0)); padding:40px 30px; text-align:center;">
+                            <h3 style="font-size:1.8rem; text-transform:uppercase; font-weight:900; margin-bottom:10px;">Extra Goodness.</h3>
+                            <h4 style="font-size:1.4rem; color:var(--primary); text-transform:uppercase; font-weight:700;">EXTRA HAPPINESS. ❤️</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Footer --- -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-brand-logo">
+                        <img src="images/bowlup logo.jpeg" alt="Bowl'Up Eatery Logo" class="footer-logo-img">
+                        <h2>Bowl'Up Eatery</h2>
+                    </div>
+                    <p>Ghana's choice for premium signature assorted food bowls. We wok-fry with fresh local ingredients to serve you big portions, full of authentic taste.</p>
+                    <div class="footer-socials">
+                        <a href="https://instagram.com/bowlupeatery" target="_blank" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@bowlupeatery" target="_blank" class="social-icon" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://snapchat.com/add/bowlupeatery" target="_blank" class="social-icon" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick links -->
+                <div class="footer-links">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#builder">Interactive Wok</a></li>
+                        <li><a href="#menu">Our Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Menu items footer -->
+                <div class="footer-links">
+                    <h3>Signature Bowls</h3>
+                    <ul>
+                        <li><a href="#menu">Assorted Jollof Bowl</a></li>
+                        <li><a href="#menu">Assorted Fried Rice</a></li>
+                        <li><a href="#menu">Stir-Fry Indomie</a></li>
+                        <li><a href="#menu">Creamy Spaghetti</a></li>
+                        <li><a href="#menu">Value Bowl'Up Combo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 style="font-size:1rem; text-transform:uppercase; margin-bottom:24px; position:relative; display:inline-block;">Contact Info</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <span>Phone & WhatsApp</span>
+                            <strong>020 132 1499</strong>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-arrow"></i>
+                        <div>
+                            <span>Location</span>
+                            <strong>Koforidua, Ghana</strong>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <span>Social Media Contact</span>
+                            <strong>@bowlupeatery</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bowl'Up Eatery. All Rights Reserved. Big Taste, Bigger Bowls.</p>
+                <p>Designed with ❤️ for Bowl'Up Eatery</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- Sliding Shopping Cart Sidebar --- -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2 class="cart-title"><i class="fa-solid fa-basket-shopping"></i> Your Wok Cart</h2>
+            <button class="cart-close-btn" id="cart-close" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <!-- Cart Items Scroll Area -->
+        <div class="cart-items-wrapper" id="cart-items-container">
+            <div class="cart-empty-state" id="cart-empty">
+                <i class="fa-solid fa-bowl-food"></i>
+                <p>Your cart is empty.<br>Start adding some loaded goodness!</p>
+                <a href="#menu" class="btn btn-secondary" style="font-size:0.8rem; padding:10px 20px;" id="shop-now-btn">Browse Menu</a>
+            </div>
+            <!-- Cart items will be loaded dynamically here -->
+        </div>
+        
+        <!-- Cart Footer / Checkout Form -->
+        <div class="cart-footer" id="cart-footer-panel" style="display:none;">
+            <div class="cart-totals">
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">GHC 0.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Delivery Fee (Koforidua)</span>
+                    <span id="cart-delivery">GHC 15.00</span>
+                </div>
+                <div class="total-row grand">
+                    <span>Total Amount</span>
+                    <span id="cart-grandtotal">GHC 0.00</span>
+                </div>
+            </div>
+            
+            <!-- Delivery input fields for customized WhatsApp receipt -->
+            <form class="delivery-form" id="delivery-details-form" onsubmit="event.preventDefault();">
+                <input type="text" class="delivery-input" id="delivery-name" placeholder="Full Name" required>
+                <input type="text" class="delivery-input" id="delivery-addr" placeholder="Delivery Address (e.g. Koforidua High St)" required>
+                <input type="text" class="delivery-input" id="delivery-phone" placeholder="Contact Phone Number" required>
+            </form>
+            
+            <button class="checkout-btn" id="whatsapp-checkout-btn">
+                <i class="fa-brands fa-whatsapp"></i> Confirm & Order via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- --- Javascript Dependencies --- -->
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP for Smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Local Logic JS Link -->
+    <script src="script.js"></script>
+</body>
+</html>

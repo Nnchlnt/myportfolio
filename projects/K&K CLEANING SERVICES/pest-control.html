@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pest Control & Fumigation - K&K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific Styles for Pest Control Page */
+        .pest-hero {
+            background: linear-gradient(135deg, #0B3A68, #7CB342);
+        }
+        .pest-list-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .pest-list-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--bg-white);
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid #7CB342;
+        }
+        .pest-list-item h4 {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .pest-badge-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .pest-badge {
+            background: #7CB342;
+            color: var(--bg-white);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 4px solid var(--primary-blue);
+        }
+        .pest-badge .icon {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+                    <img src="Asset/logo_transparent.png" alt="K&K Logo" style="height: 60px;">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#services" class="active">Services</a>
+                <a href="contact.html" class="btn-primary">Contact Us</a>
+            </nav>
+            <div class="mobile-menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Hero Section -->
+    <section class="subpage-hero pest-hero fade-in-up">
+        <div class="container">
+            <h1>PEST CONTROL <br>& FUMIGATION</h1>
+            <p style="color: #fff; font-size: 1.5rem; margin-bottom: 10px; font-style: normal; font-weight: 600;">Expert Protection for a Pest-Free Environment</p>
+        </div>
+    </section>
+
+    <!-- Content Split -->
+    <section class="container content-split fade-in-up" style="gap: 40px; padding: 60px 0;">
+        <!-- Our Services -->
+        <div style="flex: 1.5;">
+            <h2 style="border-bottom-color: #7CB342;">OUR SERVICES</h2>
+            <div class="pest-list-grid">
+                <div class="pest-list-item"><h4>Residential Pest Control</h4></div>
+                <div class="pest-list-item"><h4>Commercial Pest Control</h4></div>
+                <div class="pest-list-item"><h4>Fumigation Services</h4></div>
+                <div class="pest-list-item"><h4>Termite Control</h4></div>
+                <div class="pest-list-item"><h4>Rodent Control</h4></div>
+                <div class="pest-list-item"><h4>Mosquito Control</h4></div>
+                <div class="pest-list-item"><h4>Bed Bug Treatment</h4></div>
+            </div>
+            
+            <div class="pest-badge-container">
+                <div class="pest-badge"><span class="icon">🪳</span>Cockroaches</div>
+                <div class="pest-badge"><span class="icon">🐀</span>Rats</div>
+                <div class="pest-badge"><span class="icon">🐜</span>Termites</div>
+                <div class="pest-badge"><span class="icon">🦟</span>Mosquitoes</div>
+                <div class="pest-badge"><span class="icon">🛏️</span>Bed Bugs</div>
+            </div>
+        </div>
+        
+        <!-- Why Choose Us? -->
+        <div style="flex: 1;">
+            <h2 style="border-bottom-color: #7CB342;">WHY CHOOSE US?</h2>
+            <ul class="check-list" style="margin-bottom: 40px;">
+                <li style="color: var(--primary-blue);"><span style="color: #7CB342; font-weight: bold; margin-right: 10px;">✔️</span> Experienced & Certified Technicians</li>
+                <li style="color: var(--primary-blue);"><span style="color: #7CB342; font-weight: bold; margin-right: 10px;">✔️</span> Safe & Effective Treatments</li>
+                <li style="color: var(--primary-blue);"><span style="color: #7CB342; font-weight: bold; margin-right: 10px;">✔️</span> Eco-Friendly Solutions</li>
+                <li style="color: var(--primary-blue);"><span style="color: #7CB342; font-weight: bold; margin-right: 10px;">✔️</span> Fast & Reliable Service</li>
+            </ul>
+
+            <!-- Removed Single Image Insert -->
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="container fade-in-up" style="margin-bottom: 60px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <img src="Asset/k&k8.jpeg" alt="Pest Control 1" style="width: 100%; height: 300px; object-fit: cover; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="Asset/k&k9.jpeg" alt="Pest Control 2" style="width: 100%; height: 300px; object-fit: cover; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="Asset/K&K2.jpeg" alt="Pest Control Flyer" style="width: 100%; height: 300px; object-fit: contain; border-radius: 20px; background: #f4f4f4; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+        </div>
+    </section>
+
+    <!-- Contact Banner -->
+    <section id="contact" class="contact-banner" style="background-color: var(--primary-blue);">
+        <div class="container">
+            <h2 style="color: #7CB342;">Accra, Koforidua, Tafo</h2>
+            <div class="contact-info" style="margin-bottom: 20px;">
+                <div class="contact-item" style="background-color: rgba(255,255,255,0.1);">
+                    <span class="icon" style="color: #7CB342;">💬</span>
+                    <a href="https://wa.me/233543633907" target="_blank" style="color: #fff; text-decoration: none;">+233 543 633 907</a>
+                </div>
+                <div class="contact-item" style="background-color: rgba(255,255,255,0.1);">
+                    <span class="icon" style="color: #7CB342;">📞</span>
+                    <a href="tel:+233245133725" style="color: #fff; text-decoration: none;">+233 245 133 725</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo" style="justify-content: center;">
+                    <img src="Asset/logo_transparent.png" alt="K&K Logo" style="height: 80px; filter: brightness(0) invert(1);">
+                </div>
+                <p>Your Trusted Sanitation Experts</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> K&K Cleaning Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

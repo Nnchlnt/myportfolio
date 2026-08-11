@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio & CV of Asare Andrew Takyi Baffour (Saint Andrew) - Software Engineer, IT Specialist, and Full-Stack Developer based in Koforidua, Ghana.">
+  <title>Asare Andrew Takyi Baffour | Software Engineer & Developer Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* ===== Root Design Tokens & Theme Variables ===== */
+    :root {
+      /* Colors - Dark Mode Default */
+      --bg-base: #090d16;
+      --bg-surface: #0f172a;
+      --bg-glass: rgba(15, 23, 42, 0.75);
+      --bg-glass-card: rgba(30, 41, 59, 0.6);
+      --bg-glass-card-hover: rgba(30, 41, 59, 0.85);
+      
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --border-glass: rgba(255, 255, 255, 0.1);
+      --border-highlight: rgba(0, 210, 255, 0.3);
+      
+      --primary: #00d2ff;
+      --primary-glow: rgba(0, 210, 255, 0.4);
+      --secondary: #9d4edd;
+      --secondary-glow: rgba(157, 78, 221, 0.4);
+      --accent: #3b82f6;
+      --snapchat: #fffc00;
+      
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --glow-shadow: 0 0 25px rgba(0, 210, 255, 0.2);
+      
+      --nav-height: 80px;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Light Theme Overrides */
+    [data-theme="light"] {
+      --bg-base: #f4f7fc;
+      --bg-surface: #ffffff;
+      --bg-glass: rgba(255, 255, 255, 0.85);
+      --bg-glass-card: rgba(255, 255, 255, 0.75);
+      --bg-glass-card-hover: rgba(255, 255, 255, 0.95);
+      
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      
+      --border-glass: rgba(0, 0, 0, 0.08);
+      --border-highlight: rgba(0, 162, 232, 0.4);
+      
+      --primary: #0084c7;
+      --primary-glow: rgba(0, 132, 199, 0.25);
+      --secondary: #7b2cbf;
+      --secondary-glow: rgba(123, 44, 191, 0.25);
+      --accent: #2563eb;
+      
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+      --glow-shadow: 0 0 25px rgba(0, 132, 199, 0.15);
+    }
+
+    /* Reset & Base Setup */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color var(--transition-slow), color var(--transition-slow);
+      position: relative;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-main);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-fast);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Ambient Background Glow Blobs */
+    .ambient-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.35;
+      animation: floatBlob 12s infinite alternate ease-in-out;
+    }
+
+    .blob-1 {
+      top: -10%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: var(--primary);
+    }
+
+    .blob-2 {
+      bottom: 10%;
+      right: -5%;
+      width: 450px;
+      height: 450px;
+      background: var(--secondary);
+      animation-delay: -6s;
+    }
+
+    @keyframes floatBlob {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(60px, 40px) scale(1.15); }
+    }
+
+    /* Gradient Text Utilities */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Button System */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: var(--radius-full);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition-normal);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 20px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px var(--primary-glow);
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border-color: var(--border-glass);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, var(--secondary) 0%, #7b2cbf 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 20px var(--secondary-glow);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px var(--secondary-glow);
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 4rem auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      background: rgba(0, 210, 255, 0.1);
+      border: 1px solid var(--border-highlight);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 1rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* ===== Fixed Navbar ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      z-index: 1000;
+      transition: var(--transition-normal);
+    }
+
+    .navbar.scrolled {
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-glass);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .nav-logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo .logo-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .nav-link {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--text-main);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transition: var(--transition-normal);
+      border-radius: 2px;
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Theme Switcher Button */
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: var(--transition-normal);
+    }
+
+    .theme-toggle:hover {
+      background: var(--bg-glass-card-hover);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: rotate(15deg);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-main);
+      border-radius: 2px;
+      transition: var(--transition-normal);
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding-top: calc(var(--nav-height) + 2rem);
+      padding-bottom: 5rem;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: var(--radius-full);
+      background: rgba(0, 210, 255, 0.08);
+      border: 1px solid var(--border-highlight);
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      letter-spacing: -1.5px;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+      max-width: 580px;
+    }
+
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-socials {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: var(--transition-normal);
+    }
+
+    .social-btn:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--bg-glass-card-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 5px 15px var(--primary-glow);
+    }
+
+    .social-btn.snapchat:hover {
+      color: #000000;
+      background: var(--snapchat);
+      border-color: var(--snapchat);
+      box-shadow: 0 5px 15px rgba(255, 252, 0, 0.4);
+    }
+
+    /* Hero Profile Card Visual */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card-frame {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--card-shadow);
+      transition: var(--transition-normal);
+    }
+
+    .hero-card-frame:hover {
+      border-color: var(--border-highlight);
+      box-shadow: var(--glow-shadow);
+      transform: translateY(-5px);
+    }
+
+    .hero-img-wrapper {
+      width: 100%;
+      height: 420px;
+      border-radius: calc(var(--radius-lg) - 8px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .hero-card-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Floating Glass Pills */
+    .floating-pill {
+      position: absolute;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--card-shadow);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 2;
+      animation: floatPill 4s infinite alternate ease-in-out;
+    }
+
+    .pill-1 {
+      top: 8%;
+      left: -15%;
+    }
+
+    .pill-2 {
+      bottom: 8%;
+      right: -10%;
+      animation-delay: -2s;
+    }
+
+    @keyframes floatPill {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-12px); }
+    }
+
+    .pill-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: rgba(0, 210, 255, 0.15);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .pill-text h5 {
+      font-size: 0.9rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .pill-text p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== About Section ===== */
+    .about {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    .bio-details-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .bio-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+    }
+
+    .bio-item-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+    }
+
+    .bio-item-val {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-box {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Skills Progress Bars */
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .skill-progress-bg {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .skill-progress-fill {
+      height: 100%;
+      border-radius: var(--radius-full);
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0%;
+      transition: width 1.5s ease-out;
+    }
+
+    /* ===== Curriculum Vitae (CV) Section ===== */
+    .cv-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cv-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .cv-user-info h3 {
+      font-size: 2.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .cv-user-info p {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .cv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .cv-block h4 {
+      font-size: 1.35rem;
+      margin-bottom: 1.25rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .cv-list-item {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--border-glass);
+    }
+
+    .cv-list-item:last-child {
+      border-bottom: none;
+    }
+
+    .cv-list-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .cv-list-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== Portfolio Section ===== */
+    .portfolio {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius-full);
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition-normal);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 4px 15px var(--primary-glow);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-highlight);
+      box-shadow: var(--glow-shadow);
+    }
+
+    .project-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      background: #0f172a;
+    }
+
+    .project-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .project-card:hover .project-img-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(9, 13, 22, 0.75);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      opacity: 0;
+      transition: var(--transition-normal);
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .overlay-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      transform: translateY(15px);
+      transition: var(--transition-normal);
+    }
+
+    .overlay-btn:hover {
+      background: #ffffff;
+      color: var(--primary);
+      transform: scale(1.1);
+    }
+
+    .project-card:hover .overlay-btn {
+      transform: translateY(0);
+    }
+
+    .project-content {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-category {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-chip {
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .project-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+
+    /* Interactive Project Modal */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-normal);
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      transform: scale(0.9);
+      transition: var(--transition-normal);
+      position: relative;
+    }
+
+    .modal-backdrop.active .modal-box {
+      transform: scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: var(--text-main);
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-fast);
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(239, 68, 68, 0.8);
+      color: #ffffff;
+    }
+
+    .modal-img-wrapper {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+    }
+
+    .modal-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-body {
+      padding: 2rem;
+    }
+
+    .modal-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-features {
+      margin: 1.5rem 0;
+    }
+
+    .modal-features h4 {
+      margin-bottom: 0.75rem;
+      color: var(--primary);
+    }
+
+    .modal-features ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .modal-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .modal-features li i {
+      color: #10b981;
+    }
+
+    /* ===== Achievements Section ===== */
+    .achievements {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .achievement-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      text-align: center;
+      transition: var(--transition-normal);
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-highlight);
+      box-shadow: var(--glow-shadow);
+    }
+
+    .achievement-icon-box {
+      width: 70px;
+      height: 70px;
+      border-radius: var(--radius-md);
+      background: rgba(0, 210, 255, 0.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.5rem auto;
+      border: 1px solid var(--border-highlight);
+    }
+
+    .achievement-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .achievement-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Certifications Showcase */
+    .cert-showcase {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .cert-list {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.2rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      font-weight: 500;
+    }
+
+    .cert-item i {
+      color: var(--primary);
+    }
+
+    .cert-badge-visual {
+      background: linear-gradient(135deg, rgba(0, 210, 255, 0.1) 0%, rgba(157, 78, 221, 0.1) 100%);
+      border: 1px solid var(--border-highlight);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .badge-icon {
+      font-size: 4rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+    }
+
+    .contact-info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .info-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      transition: var(--transition-normal);
+    }
+
+    .info-card:hover {
+      border-color: var(--border-highlight);
+      transform: translateX(6px);
+    }
+
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-md);
+      background: rgba(0, 210, 255, 0.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .info-icon.snapchat {
+      background: rgba(255, 252, 0, 0.15);
+      color: #ffd700;
+    }
+
+    .info-details h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .info-details p, .info-details a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .info-details a:hover {
+      color: var(--primary);
+    }
+
+    /* Contact Form Styling */
+    .contact-form-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition-normal);
+    }
+
+    .form-input:focus {
+      border-color: var(--primary);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    /* Toast Notification System */
+    .toast-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 3000;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .toast {
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      border: 1px solid var(--primary);
+      color: var(--text-main);
+      box-shadow: var(--glow-shadow);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      animation: slideInRight 0.3s ease-out;
+    }
+
+    .toast i {
+      color: #10b981;
+      font-size: 1.25rem;
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      border-top: 1px solid var(--border-glass);
+      padding: 2.5rem 0;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      background: var(--bg-surface);
+    }
+
+    .footer p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Back to Top Floating Action Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-normal);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    /* Printable CV Specific Styling */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .navbar, .ambient-glow, .hero-cta, .portfolio-filters, .back-to-top, .toast-container, .contact-form-card {
+        display: none !important;
+      }
+      .cv-card, .about-card {
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        color: #000000 !important;
+      }
+    }
+
+    /* ===== Responsive Breakpoints ===== */
+    @media (max-width: 992px) {
+      .hero-grid, .about-grid, .contact-grid, .cert-showcase {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .pill-1 { left: 0; }
+      .pill-2 { right: 0; }
+      .bio-details-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.5rem; }
+      .section-header h2 { font-size: 2.1rem; }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--bg-surface);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.25rem;
+        transition: var(--transition-normal);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+      }
+
+      .nav-menu.active {
+        right: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .cert-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Background Mesh Glow -->
+  <div class="ambient-glow">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <!-- Toast Notification Portal -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- ===== Navigation Bar ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo">
+        Asare Andrew <span class="logo-dot"></span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#cv" class="nav-link">Curriculum Vitae</a></li>
+        <li><a href="#portfolio" class="nav-link">Projects Showcase</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme Switcher Toggle -->
+        <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-dot"></span> Open for Freelance & Full-Time Roles
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Asare Andrew</span>
+          </h1>
+          <h2 class="hero-subtitle">Asare Andrew Takyi Baffour • IT Specialist & Developer</h2>
+          <p class="hero-description">
+            Passionate software engineer transforming complex ideas into high-impact digital solutions with modern web technologies, glassmorphic design, and intuitive user experiences.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#portfolio" class="btn btn-primary">
+              <i class="fas fa-layer-group"></i> Explore Projects
+            </a>
+            <a href="#cv" class="btn btn-secondary">
+              <i class="fas fa-file-alt"></i> View Full CV
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fas fa-paper-plane"></i> Contact Me
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://wa.me/233201321499" target="_blank" class="social-btn" title="WhatsApp (0201321499)"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:0505781955" class="social-btn" title="Call (0505781955)"><i class="fas fa-phone"></i></a>
+            <a href="https://www.snapchat.com/add/saint.andrew" target="_blank" class="social-btn snapchat" title="Snapchat (saint.andrew)"><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="https://www.instagram.com/nx_andr3w.18?igsh=aHZtZHcxb242dGhq&utm_source=qr" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com" target="_blank" class="social-btn" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-frame">
+            <div class="hero-img-wrapper">
+              <img src="image/WhatsApp Image 2026-02-06 at 6.39.26 PM.jpeg" alt="Asare Andrew Takyi Baffour Profile Portrait">
+            </div>
+
+            <!-- Floating Micro Cards -->
+            <div class="floating-pill pill-1">
+              <div class="pill-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="pill-text">
+                <h5>Diploma in IT</h5>
+                <p>KTU Graduate</p>
+              </div>
+            </div>
+
+            <div class="floating-pill pill-2">
+              <div class="pill-icon"><i class="fas fa-check-circle"></i></div>
+              <div class="pill-text">
+                <h5>Science Background</h5>
+                <p>Aburi Sec. Tech</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About & Skills Section ===== -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2>Passionate Developer & Problem Solver</h2>
+        <p>Creating elegant, responsive digital solutions that bridge science, technology, and design.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card about-text">
+          <h3>Personal Profile</h3>
+          <p>
+            I am <strong>Asare Andrew Takyi Baffour</strong> (Saint Andrew), a 20-year-old software engineer and IT diploma graduate from Koforidua Technical University.
+          </p>
+          <p>
+            With a solid Science foundation from Aburi Secondary Technical School, I combine analytical thinking with creative design to engineer full-stack web applications.
+          </p>
+
+          <div class="bio-details-list">
+            <div class="bio-item">
+              <span class="bio-item-label">Full Name</span>
+              <span class="bio-item-val">Asare Andrew Takyi Baffour</span>
+            </div>
+            <div class="bio-item">
+              <span class="bio-item-label">Age & Status</span>
+              <span class="bio-item-val">20 Years • Single</span>
+            </div>
+            <div class="bio-item">
+              <span class="bio-item-label">Tribe & Origin</span>
+              <span class="bio-item-val">Akan (Ghana)</span>
+            </div>
+            <div class="bio-item">
+              <span class="bio-item-label">Languages</span>
+              <span class="bio-item-val">English & Twi (Fluent)</span>
+            </div>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-box">
+              <div class="stat-number">5+</div>
+              <div class="stat-label">Years Coding</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">30+</div>
+              <div class="stat-label">Completed Projects</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h3 style="margin-bottom: 1.5rem;">Technical Expertise</h3>
+          <div class="skills-container">
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Frontend & React / Next.js</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="95%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Backend & Node.js / Express</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="88%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>UI/UX Design & Glassmorphism</span>
+                <span>92%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="92%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Databases (PostgreSQL / MongoDB)</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="85%"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Curriculum Vitae (CV) Section ===== -->
+  <section id="cv" class="cv-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Curriculum Vitae</span>
+        <h2>Professional Resume & Background</h2>
+        <p>Comprehensive breakdown of education, qualifications, personal profile, and technical skills.</p>
+      </div>
+
+      <div class="cv-card">
+        <div class="cv-header">
+          <div class="cv-user-info">
+            <h3>Asare Andrew Takyi Baffour</h3>
+            <p>Software Engineer | Diploma in IT Specialist</p>
+          </div>
+          <div>
+            <button onclick="window.print()" class="btn btn-primary">
+              <i class="fas fa-print"></i> Print / Save CV as PDF
+            </button>
+          </div>
+        </div>
+
+        <div class="cv-grid">
+          <!-- Column 1: Education & Qualifications -->
+          <div class="cv-block">
+            <h4><i class="fas fa-graduation-cap"></i> Education & Academic Background</h4>
+            
+            <div class="cv-list-item">
+              <div class="cv-list-title">Diploma in Information Technology (IT)</div>
+              <div class="cv-list-sub">Koforidua Technical University (KTU), Ghana</div>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem;">
+                Specialized in Full-Stack Web Development, Software Engineering, System Architecture, Database Management, and Networking.
+              </p>
+            </div>
+
+            <div class="cv-list-item">
+              <div class="cv-list-title">General Science Certificate (WASSCE)</div>
+              <div class="cv-list-sub">Aburi Secondary Technical School (ABUSECTECH)</div>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem;">
+                Majored in General Science, developing strong analytical thinking, mathematics, physics, and logical problem-solving skills.
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 2: Personal Profile & Details -->
+          <div class="cv-block">
+            <h4><i class="fas fa-user-check"></i> Personal Details & Bio</h4>
+            
+            <div class="cv-list-item">
+              <div class="cv-list-title">Full Name</div>
+              <div class="cv-list-sub">Asare Andrew Takyi Baffour</div>
+            </div>
+
+            <div class="cv-list-item">
+              <div class="cv-list-title">Age & Marital Status</div>
+              <div class="cv-list-sub">20 Years Old • Single</div>
+            </div>
+
+            <div class="cv-list-item">
+              <div class="cv-list-title">Tribe & Nationality</div>
+              <div class="cv-list-sub">Akan • Ghanaian</div>
+            </div>
+
+            <div class="cv-list-item">
+              <div class="cv-list-title">Languages Spoken</div>
+              <div class="cv-list-sub">English (Fluent) • Twi (Native)</div>
+            </div>
+          </div>
+
+          <!-- Column 3: Contact & Communication -->
+          <div class="cv-block">
+            <h4><i class="fas fa-address-book"></i> Official Contact Details</h4>
+            
+            <div class="cv-list-item">
+              <div class="cv-list-title">Calling Phone</div>
+              <div class="cv-list-sub"><a href="tel:0505781955" style="color: var(--primary);">0505781955</a></div>
+            </div>
+
+            <div class="cv-list-item">
+              <div class="cv-list-title">WhatsApp Contact</div>
+              <div class="cv-list-sub"><a href="https://wa.me/233201321499" target="_blank" style="color: #10b981;">0201321499 (+233 20 132 1499)</a></div>
+            </div>
+
+            <div class="cv-list-item">
+              <div class="cv-list-title">Snapchat Handle</div>
+              <div class="cv-list-sub"><a href="https://www.snapchat.com/add/saint.andrew" target="_blank" style="color: var(--snapchat);">saint.andrew</a></div>
+            </div>
+
+            <div class="cv-list-item">
+              <div class="cv-list-title">Email Address</div>
+              <div class="cv-list-sub"><a href="mailto:asareandrew79@gmail.com" style="color: var(--primary);">asareandrew79@gmail.com</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Portfolio Section ===== -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Featured Projects</span>
+        <h2>My Website Designs & Developments</h2>
+        <p>Explore live, fully-functional web applications built and designed by Asare Andrew.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="eatery">Food & Restaurant</button>
+        <button class="filter-btn" data-filter="services">Facility Services</button>
+        <button class="filter-btn" data-filter="brand">Brand & Apparel</button>
+        <button class="filter-btn" data-filter="church">Community & Faith</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- Real Project 1: Bowl'up Eatery -->
+        <div class="project-card" data-category="eatery">
+          <div class="project-img-wrapper">
+            <img src="projects/Bowl'up Eatery/images/bowlup logo.jpeg" alt="Bowl'up Eatery Website">
+            <div class="project-overlay">
+              <button class="overlay-btn open-modal" data-project="bowlup" title="Quick Preview">
+                <i class="fas fa-eye"></i>
+              </button>
+              <a href="projects/Bowl'up Eatery/index.html" target="_blank" class="overlay-btn" title="Open Full Live Site">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">Food & Culinary Platform</span>
+            <h3 class="project-title">Bowl'up Eatery</h3>
+            <p class="project-desc">A full-service restaurant & online food ordering web app featuring interactive dish menus, online reservations, and food cart ordering.</p>
+            <div class="project-tags">
+              <span class="tech-chip">HTML5</span>
+              <span class="tech-chip">CSS3 Grid</span>
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">UI Design</span>
+            </div>
+            <div class="project-actions">
+              <a href="projects/Bowl'up Eatery/index.html" target="_blank" class="btn btn-primary" style="width: 100%; font-size: 0.9rem; padding: 0.65rem 1.2rem;">
+                <i class="fas fa-external-link-alt"></i> Open Full Website
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real Project 2: K&K CLEANING SERVICES -->
+        <div class="project-card" data-category="services">
+          <div class="project-img-wrapper">
+            <img src="projects/K&K CLEANING SERVICES/Asset/K&K.jpeg" alt="K&K Cleaning Services Website">
+            <div class="project-overlay">
+              <button class="overlay-btn open-modal" data-project="kkcleaning" title="Quick Preview">
+                <i class="fas fa-eye"></i>
+              </button>
+              <a href="projects/K&K CLEANING SERVICES/index.html" target="_blank" class="overlay-btn" title="Open Full Live Site">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">Facility & Environmental Services</span>
+            <h3 class="project-title">K&K Cleaning Services</h3>
+            <p class="project-desc">Multi-page corporate website offering lawn maintenance, pest control, waste management, booking request forms, and service quotes.</p>
+            <div class="project-tags">
+              <span class="tech-chip">HTML5</span>
+              <span class="tech-chip">CSS3</span>
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">Multi-Page</span>
+            </div>
+            <div class="project-actions">
+              <a href="projects/K&K CLEANING SERVICES/index.html" target="_blank" class="btn btn-primary" style="width: 100%; font-size: 0.9rem; padding: 0.65rem 1.2rem;">
+                <i class="fas fa-external-link-alt"></i> Open Full Website
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real Project 3: SAINTS CULT -->
+        <div class="project-card" data-category="brand">
+          <div class="project-img-wrapper">
+            <img src="projects/SAINTS CULT/dist/images/SAINTS CULT.png" alt="Saints Cult Apparel Brand">
+            <div class="project-overlay">
+              <button class="overlay-btn open-modal" data-project="saintscult" title="Quick Preview">
+                <i class="fas fa-eye"></i>
+              </button>
+              <a href="projects/SAINTS CULT/dist/index.html" target="_blank" class="overlay-btn" title="Open Full Live Site">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">Creative Brand & Apparel</span>
+            <h3 class="project-title">SAINTS CULT</h3>
+            <p class="project-desc">Dark luxury aesthetic streetwear & creative brand web application built with React components, responsive modern styling, and product galleries.</p>
+            <div class="project-tags">
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">Vite</span>
+              <span class="tech-chip">Capacitor</span>
+              <span class="tech-chip">Tailwind CSS</span>
+            </div>
+            <div class="project-actions">
+              <a href="projects/SAINTS CULT/dist/index.html" target="_blank" class="btn btn-primary" style="width: 100%; font-size: 0.9rem; padding: 0.65rem 1.2rem;">
+                <i class="fas fa-external-link-alt"></i> Open Full Website
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real Project 4: THE GO CHURCH -->
+        <div class="project-card" data-category="church">
+          <div class="project-img-wrapper">
+            <img src="projects/THE GO CHURCH/assets/bg.png" alt="The Go Church Website">
+            <div class="project-overlay">
+              <button class="overlay-btn open-modal" data-project="gochurch" title="Quick Preview">
+                <i class="fas fa-eye"></i>
+              </button>
+              <a href="projects/THE GO CHURCH/index.html" target="_blank" class="overlay-btn" title="Open Full Live Site">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-category">Faith & Community Portal</span>
+            <h3 class="project-title">THE GO CHURCH</h3>
+            <p class="project-desc">Comprehensive church web platform featuring sermon archives, ministry sections, online donation gateway, prayer requests, and media gallery.</p>
+            <div class="project-tags">
+              <span class="tech-chip">HTML5</span>
+              <span class="tech-chip">CSS3</span>
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">Video Streaming</span>
+            </div>
+            <div class="project-actions">
+              <a href="projects/THE GO CHURCH/index.html" target="_blank" class="btn btn-primary" style="width: 100%; font-size: 0.9rem; padding: 0.65rem 1.2rem;">
+                <i class="fas fa-external-link-alt"></i> Open Full Website
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Project Modal Backdrop & Dialog -->
+  <div class="modal-backdrop" id="projectModal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modalCloseBtn"><i class="fas fa-times"></i></button>
+      <div class="modal-img-wrapper">
+        <img src="" id="modalImage" alt="Project Preview">
+      </div>
+      <div class="modal-body">
+        <span class="project-category" id="modalCategory">Category</span>
+        <h2 class="modal-title" id="modalTitle">Project Title</h2>
+        <p class="project-desc" id="modalDescription">Detailed description goes here...</p>
+
+        <div class="modal-features">
+          <h4>Key Technical Highlights</h4>
+          <ul id="modalFeatures">
+            <!-- Populated via JS -->
+          </ul>
+        </div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="#" target="_blank" class="btn btn-primary" id="modalLiveSiteBtn">
+            <i class="fas fa-external-link-alt"></i> Open Full Live Website
+          </a>
+          <button onclick="closeModal()" class="btn btn-outline">
+            <i class="fas fa-times"></i> Close Preview
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Achievements & Certifications ===== -->
+  <section id="achievements" class="achievements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Recognitions</span>
+        <h2>Honors & Certifications</h2>
+        <p>Milestones and industry certifications validating software engineering expertise.</p>
+      </div>
+
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="achievement-icon-box"><i class="fas fa-trophy"></i></div>
+          <h3>Best Developer Award 2025</h3>
+          <p>Awarded for excellence in web software engineering and innovative digital product delivery.</p>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-icon-box"><i class="fas fa-certificate"></i></div>
+          <h3>Diploma in Information Technology</h3>
+          <p>Graduated from Koforidua Technical University with comprehensive IT, coding, and networking skills.</p>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-icon-box"><i class="fas fa-code-branch"></i></div>
+          <h3>Open Source Contributor</h3>
+          <p>Active contributor to open-source developer toolkits, UI kits, and JavaScript utilities.</p>
+        </div>
+      </div>
+
+      <div class="cert-showcase">
+        <div>
+          <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Certified Technical Competencies</h3>
+          <p style="color: var(--text-muted);">
+            Rigorous training and verified credentials across leading enterprise cloud platforms and development stacks.
+          </p>
+
+          <div class="cert-list">
+            <div class="cert-item"><i class="fas fa-check-circle"></i> KTU IT Diploma Graduate</div>
+            <div class="cert-item"><i class="fas fa-check-circle"></i> Aburi Sec. Tech Science Major</div>
+            <div class="cert-item"><i class="fas fa-check-circle"></i> Full Stack Web Engineer</div>
+            <div class="cert-item"><i class="fas fa-check-circle"></i> UI/UX System Designer</div>
+          </div>
+        </div>
+
+        <div class="cert-badge-visual">
+          <div class="badge-icon"><i class="fas fa-award"></i></div>
+          <h4>Verified Engineer</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Asare Andrew Takyi Baffour</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2>Let's Work Together!</h2>
+        <p>Have a project in mind, feedback, or a business inquiry? Send a message today.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-cards">
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div class="info-details">
+              <h4>Calling Phone</h4>
+              <a href="tel:0505781955">0505781955</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon" style="color: #10b981;"><i class="fab fa-whatsapp"></i></div>
+            <div class="info-details">
+              <h4>WhatsApp Contact</h4>
+              <a href="https://wa.me/233201321499" target="_blank">0201321499 (+233 20 132 1499)</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon snapchat"><i class="fab fa-snapchat-ghost"></i></div>
+            <div class="info-details">
+              <h4>Snapchat</h4>
+              <a href="https://www.snapchat.com/add/saint.andrew" target="_blank">saint.andrew</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-details">
+              <h4>Direct Email</h4>
+              <a href="mailto:asareandrew79@gmail.com">asareandrew79@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-details">
+              <h4>Location</h4>
+              <p>Koforidua, Ghana</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" class="form-input" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" class="form-input" placeholder="Your Email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" class="form-input" placeholder="Project Inquiry" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" class="form-input" placeholder="Tell me about your project..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Asare Andrew Takyi Baffour. All rights reserved.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem;">Designed & Built with <i class="fas fa-heart" style="color: #ef4444;"></i> by Saint Andrew</p>
+    </div>
+  </footer>
+
+  <!-- Floating Back-to-Top Button -->
+  <button class="back-to-top" id="backToTopBtn" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ===== Interactive Scripts ===== -->
+  <script>
+    // Real Projects Detailed Data for Modal & Links
+    const projectsData = {
+      'bowlup': {
+        title: "Bowl'up Eatery",
+        category: 'Food & Culinary Platform',
+        image: "projects/Bowl'up Eatery/images/bowlup logo.jpeg",
+        link: "projects/Bowl'up Eatery/index.html",
+        description: "Bowl'up Eatery is an interactive restaurant website and online food ordering application designed for fast food menu browsing, reservation bookings, and online food cart selection.",
+        features: [
+          'Interactive Food Menu Showcase',
+          'Online Table Reservation Form',
+          'Responsive Food Cart Logic',
+          'Custom Brand Colors & Glassmorphic UI'
+        ]
+      },
+      'kkcleaning': {
+        title: 'K&K Cleaning Services',
+        category: 'Facility & Environmental Services',
+        image: 'projects/K&K CLEANING SERVICES/Asset/K&K.jpeg',
+        link: 'projects/K&K CLEANING SERVICES/index.html',
+        description: 'K&K Cleaning Services is a complete corporate multi-page web platform highlighting specialized cleaning services including lawn maintenance, pest control, and waste collection.',
+        features: [
+          'Dedicated Service Offerings Pages',
+          'Instant Cleaning Cost Estimator Form',
+          'Customer Service Booking Forms',
+          'Clean Modern Responsive Layout'
+        ]
+      },
+      'saintscult': {
+        title: 'SAINTS CULT',
+        category: 'Creative Brand & Apparel',
+        image: 'projects/SAINTS CULT/dist/images/SAINTS CULT.png',
+        description: 'SAINTS CULT is a dark aesthetic streetwear apparel website featuring high-res lookbook galleries, interactive product displays, and mobile app ready components.',
+        features: [
+          'React Component Architecture',
+          'High-Resolution Lookbook Gallery',
+          'Vite & Tailwind CSS Engine',
+          'Mobile & App Shell Integration'
+        ]
+      },
+      'gochurch': {
+        title: 'THE GO CHURCH',
+        category: 'Faith & Community Portal',
+        image: 'projects/THE GO CHURCH/assets/bg.png',
+        link: 'projects/THE GO CHURCH/index.html',
+        description: 'THE GO CHURCH is an all-in-one digital portal for community ministry, sermon audio/video archives, online donation processing, and prayer request submissions.',
+        features: [
+          'Sermon & Video Media Player',
+          'Online Tithes & Donation Portal',
+          'Prayer Request Submission Form',
+          'Photo & Video Event Gallery'
+        ]
+      }
+    };
+
+    // DOM Elements
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    
+    // Modal Elements
+    const projectModal = document.getElementById('projectModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalImage = document.getElementById('modalImage');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalFeatures = document.getElementById('modalFeatures');
+    const modalLiveSiteBtn = document.getElementById('modalLiveSiteBtn');
+
+    // Theme Switcher Logic
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
+
+    function setTheme(theme) {
+      htmlElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (theme === 'light') {
+        themeIcon.className = 'fas fa-sun';
+      } else {
+        themeIcon.className = 'fas fa-moon';
+      }
+    }
+
+    // Scroll Navbar & Back-to-Top Handler
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Mobile Hamburger Navigation
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Portfolio Category Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const categories = card.getAttribute('data-category');
+          if (filterValue === 'all' || categories.includes(filterValue)) {
+            card.style.display = 'flex';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Interactive Project Detail Modal
+    document.querySelectorAll('.open-modal').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const projectId = btn.getAttribute('data-project');
+        const data = projectsData[projectId];
+
+        if (data) {
+          modalImage.src = data.image;
+          modalCategory.textContent = data.category;
+          modalTitle.textContent = data.title;
+          modalDescription.textContent = data.description;
+          modalLiveSiteBtn.href = data.link;
+
+          modalFeatures.innerHTML = data.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('');
+
+          projectModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    projectModal.addEventListener('click', (e) => {
+      if (e.target === projectModal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    function closeModal() {
+      projectModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Scroll Observer for Skill Bar Animations
+    const observerOptions = { threshold: 0.2 };
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fillBars = entry.target.querySelectorAll('.skill-progress-fill');
+          fillBars.forEach(bar => {
+            bar.style.width = bar.getAttribute('data-progress');
+          });
+          skillObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const skillsSection = document.querySelector('.skills-container');
+    if (skillsSection) skillObserver.observe(skillsSection);
+
+    // Contact Form Handler & Toast Notification
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+
+      showToast(`Thank you, ${name}! Your message has been sent successfully. Asare Andrew will contact you shortly.`);
+      document.getElementById('contactForm').reset();
+    }
+
+    function showToast(message) {
+      const toastContainer = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `<i class="fas fa-check-circle"></i> <span>${message}</span>`;
+      
+      toastContainer.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(100%)';
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+  </script>
+</body>
+</html>

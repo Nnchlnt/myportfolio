@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Cleaning Services - K&K SANITATION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Asset/logo_transparent.png" alt="K&K Logo" style="height: 60px;">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#services" class="active">Services</a>
+                <a href="contact.html" class="btn-primary">Contact Us</a>
+            </nav>
+            <div class="mobile-menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Hero Section -->
+    <section class="subpage-hero fade-in-up">
+        <div class="container">
+            <h1>GENERAL CLEANING <br>& JANITORIAL SERVICES</h1>
+            <p style="color: var(--primary-yellow); font-size: 1.5rem; margin-bottom: 10px; font-weight: 600;">WE MAKE YOUR SPACES CLEAN, HEALTHY & PROFESSIONAL</p>
+        </div>
+    </section>
+
+    <!-- Content Split -->
+    <section class="container content-split fade-in-up">
+        <!-- Our Services -->
+        <div class="services-list-container">
+            <h2 style="color: var(--primary-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 25px; border-bottom: 3px solid var(--primary-yellow); display: inline-block;">OUR SERVICES</h2>
+            <ul class="check-list">
+                <li>Office Vacuum Cleaning</li>
+                <li>Floor Mopping & Scrubbing</li>
+                <li>Dusting & Furniture Cleaning</li>
+                <li>Window & Glass Cleaning</li>
+                <li>Restroom Cleaning & Sanitation</li>
+                <li>Post-Construction Cleaning</li>
+                <li>Events & Party Cleaning</li>
+                <li>Commercial & Residential Janitorial</li>
+            </ul>
+        </div>
+        
+        <!-- Why Choose Us? -->
+        <div class="why-choose-us-container">
+            <h2 style="color: var(--primary-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 25px; border-bottom: 3px solid var(--accent-green); display: inline-block;">WHY CHOOSE US?</h2>
+            <ul class="check-list">
+                <li>Professional & Trained Staff</li>
+                <li>Eco-Friendly Cleaning Agents</li>
+                <li>Flexible Scheduling</li>
+                <li>Attention to Every Detail</li>
+                <li>Guaranteed Satisfaction</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="container fade-in-up" style="margin-bottom: 60px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <img src="Asset/k10.jpeg" alt="Professional Cleaning 1" style="width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="Asset/k11.jpeg" alt="Professional Cleaning 2" style="width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="Asset/k12.jpeg" alt="Professional Cleaning 3" style="width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+    </section>
+
+    <!-- Contact Banner -->
+    <section id="contact" class="contact-banner fade-in-up">
+        <div class="container">
+            <h2>READY FOR A SPOTLESS SPACE?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Get a free quote for our professional cleaning services today.</p>
+            <div class="contact-info" style="margin-bottom: 20px;">
+                <div class="contact-item" style="background-color: rgba(0,0,0,0.2);">
+                    <span class="icon">💬</span>
+                    <a href="https://wa.me/233543633907" target="_blank" style="color: #fff; text-decoration: none;">+233 543 633 907</a>
+                </div>
+                <div class="contact-item" style="background-color: rgba(0,0,0,0.2);">
+                    <span class="icon">📞</span>
+                    <a href="tel:+233245133725" style="color: #fff; text-decoration: none;">+233 245 133 725</a>
+                </div>
+            </div>
+            <a href="contact.html" class="btn-primary" style="background-color: var(--primary-yellow); color: #000; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 20px;">BOOK NOW</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo" style="justify-content: center;">
+                    <img src="Asset/logo_transparent.png" alt="K&K Logo" style="height: 80px; filter: brightness(0) invert(1);">
+                </div>
+                <p>Your Trusted Sanitation Experts</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> K&K Sanitation Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Prayer Request - The Go Church</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <span>The Go Church</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Navigation Drawer -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="ministry.html">Ministry</a></li>
+      <li><a href="sermons.html">Sermons</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="prayer.html">Prayer Request</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="page-wrapper">
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h1 class="section-title">Submit your <br>prayer request</h1>
+          <p class="section-subtitle">We would love to pray with you.</p>
+        </div>
+        
+        <div class="form-card">
+          <form id="prayer-form">
+            <div class="form-group">
+              <label for="p-fname" class="form-label">First Name <span class="req">*</span></label>
+              <input type="text" id="p-fname" name="fname" class="form-control" placeholder="Enter your first name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="p-email" class="form-label">Email Address <span class="req">*</span></label>
+              <input type="email" id="p-email" name="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="p-phone" class="form-label">Phone Number</label>
+              <input type="tel" id="p-phone" name="phone" class="form-control" placeholder="Enter your phone number">
+            </div>
+            
+            <div class="form-group">
+              <label for="prayer_text" class="form-label" style="display: flex; justify-content: space-between;">
+                Prayer Request <span class="req">*</span>
+              </label>
+              <textarea id="prayer_text" name="prayer_request" class="form-control" placeholder="Type your prayer request here..." maxlength="180" required></textarea>
+              <div class="char-counter">
+                <span>Maximum 180 characters</span>
+                <span><span id="current-count">0</span> / 180</span>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top: 10px; font-size: 1.1rem; padding: 16px;">Submit Prayer Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministry.html">Ministry</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="donate.html">Donate</a>
+      <a href="prayer.html">Prayer</a>
+    </div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/thegochurch_hq?igsh=MXFoNHF4M3dtMTRuaw==" target="_blank" aria-label="Instagram">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.822a1.424 1.424 0 11-2.848 0 1.424 1.424 0 012.848 0z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@thegochurch_hq?_r=1&_t=ZS-95lcz5rHP9R" target="_blank" aria-label="TikTok">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2-1.74 2.89 2.89 0 012.89-2.88c.39 0 .73.13 1.05.32v-3.2a6.34 6.34 0 00-6.4 6.64 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.25-6.23v-7a8.56 8.56 0 005.15 1.74v-3.32a5.45 5.45 0 01-2.86-.95z"/></svg>
+      </a>
+    </div>
+    <p class="copyright">&copy; 2026 The Go Church. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
